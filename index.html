@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<title>张坤祥-个人服务器</title>
+		<link rel="stylesheet" type="text/css" href="assets/waifu.css" />
+		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	</head>
+
+	<body>
+		<div id="msg" style="position: absolute;width: 99%; text-align: center;">
+			<h1>个人服务器，用于开发测试，暂时未部署。</h1>
+			<h3>个人服务器，用于开发测试，暂时未部署。</h3>
+			<p>如有疑问联系服务器负责人</p>
+			<p> 负责人：<span style="color:#CD7F32;">张坤祥</span></p>
+			<p>邮箱：
+				<a href="mailto:68786834@qq.com">68786834@qq.com</a>
+			</p>
+			<p>
+				<a href="tencent://message/?uin=68786834&Site=Sambow&Menu=yes">QQ在线咨询</a>
+			</p>
+			<p>签名：<img src="img/zkx_1.gif" id="myName" height="70" /></p>
+			<p>
+				<a href="rem.html">去找蕾姆</a>
+			</p>
+		</div>
+
+		<!--d看板DIV-->
+		<div>
+			<div class="waifu">
+				<div class="waifu-tips"></div>
+				<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+				<div class="waifu-tool">
+					<span class="fui-home"></span>
+					<span class="fui-chat"></span>
+					<span class="fui-eye"></span>
+					<span class="fui-user"></span>
+					<span class="fui-photo"></span>
+					<span class="fui-info-circle"></span>
+					<span class="fui-cross"></span>
+				</div>
+			</div>
+
+			<script src="assets/waifu-tips.js"></script>
+			<script src="assets/live2d.js"></script>
+			<script type="text/javascript">
+				initModel("assets/")
+			</script>
+		</div>
+	</body>
+	<script>
+		function IsPC() {
+			var userAgentInfo = navigator.userAgent;
+			var Agents = ["Android", "iPhone",
+				"SymbianOS", "Windows Phone",
+				"iPad", "iPod"
+			];
+			var flag = true;
+			for(var v = 0; v < Agents.length; v++) {
+				if(userAgentInfo.indexOf(Agents[v]) > 0) {
+					flag = false;
+					break;
+				}
+			}
+			return flag;
+		}
+		//适配手机端
+		var flag = IsPC(); //true为PC端，false为手机端
+		if(!flag) {
+			const scale = document.documentElement.clientWidth / 750
+			document.documentElement.style.fontSize = (32 * Math.min(scale, 2)) + 'px'
+
+			$("#msg").css("top", "10%")
+			$("h3").show();
+			$("h1").hide();
+		} else {
+			$("#msg").css("top", "25%")
+			$("h1").show();
+			$("h3").hide();
+		}
+		//签名展示
+		var readom = Math.ceil(Math.random() * 10);
+		if(readom % 2 == 0) {
+			$("#myName").attr("src", "img/zkx_2.gif")
+		} else {
+			$("#myName").attr("src", "img/zkx_1.gif")
+		}
+	</script>
+</html>
