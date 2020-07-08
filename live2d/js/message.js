@@ -479,7 +479,9 @@ if(!norunFlag) {
 	$(document).ready(function() {
 		//home_Path + message_Path + "model/rem/remu2048/texture_00.png"
 		var AIimgSrc = [
-			message_Path + "model/rem/remu2048/texture_00.png"
+//			message_Path + "model/rem/remu2048/texture_00.png"
+//			图片使用图片服务器代理发布
+			"https://i.loli.net/2020/07/08/oWyk2vI9O3PjXhV.png"
 		]
 		var images = [];
 		var imgLength = AIimgSrc.length;
