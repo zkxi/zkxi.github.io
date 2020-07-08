@@ -3,7 +3,7 @@
 	"name": "remu",
 	"model": "remu.moc",
 	"textures": [
-		"remu2048/texture_00.png"
+		"https://i.loli.net/2020/07/08/oWyk2vI9O3PjXhV.png"
 	],
 	"physics": "remu.physics.json",
 	"pose": "remu.pose.json",
